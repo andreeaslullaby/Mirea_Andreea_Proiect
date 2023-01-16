@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Mirea_Andreea_Proiect.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Mirea_Andreea_Proiect"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <ShellContent
+        Title="your secrets"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        />
+
+        <ShellContent
+            Title="Start telling..."
+            ContentTemplate="{DataTemplate local:StartTelling}"
+            />
+    </TabBar>
+</Shell>
