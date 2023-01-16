@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mirea_Andreea_Proiect.Entry"
+             Title="Entry">
+    <StackLayout Margin="20">
+        <Editor Placeholder="feel free to write what's on your mind"
+                Text="{Binding Description}"
+                HeightRequest="100" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="save me"
+                    Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="delete me"
+                    Clicked="OnDeleteButtonClicked" />  
+        </Grid>
+    </StackLayout>
+</ContentPage>

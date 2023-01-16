@@ -16,5 +16,9 @@
             Title="Start telling..."
             ContentTemplate="{DataTemplate local:StartTelling}"
             />
+        <ShellContent
+            Title="My secrets are here"
+            ContentTemplate="{DataTemplate local:MyEntries}"
+            />  
     </TabBar>
 </Shell>
