@@ -19,10 +19,12 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button Text="save me"
-                    Clicked="OnSaveButtonClicked" />
+                    Clicked="OnSaveButtonClicked"
+                    BackgroundColor="#F56EB3"/>
             <Button Grid.Column="1"
                     Text="delete me"
-                    Clicked="OnDeleteButtonClicked" />  
+                    Clicked="OnDeleteButtonClicked"
+                    BackgroundColor="#E5BA73"/>  
         </Grid>
     </StackLayout>
 </ContentPage>
