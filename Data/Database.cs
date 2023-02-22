@@ -81,11 +81,7 @@ namespace Mirea_Andreea_Proiect.Data
 
         public Task<List<Sign>> GetListSignsAsync(int signlistid)
         {
-            return _database.QueryAsync<Sign>(
-                "select S.ID, S.Description from Sign S"
-                + "inner join ListSign LS"
-                + " on S.ID = LS.SignID where LS.SignListID = ?",
-                signlistid);
+            return _database.QueryAsync<Sign>( "select S.ID, S.Description from Sign S"+ "inner join ListSign LS" + " on S.ID = LS.SignID where LS.SignListID = ?",signlistid);
         }
     }
 }
