@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace Mirea_Andreea_Proiect.Models
 {
-    public class SecretList
+    public class Sign
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        [MaxLength(400), Unique]
         public string Description { get; set; }
-        public DateTime Date { get; set; }
+        [OneToMany]
+        public List<ListSign> ListSign { get; set; }
     }
 }

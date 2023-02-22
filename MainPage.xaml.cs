@@ -14,9 +14,9 @@ public partial class MainPage : ContentPage
 		count++;
 
 		if (count == 1)
-			CounterBtn.Text = $"you have {count} things on your mind";
+			CounterBtn.Text = $"there are {count} stars in the sky";
 		else
-			CounterBtn.Text = $"you have {count} things on your mind";
+			CounterBtn.Text = $"there are {count} stars in the sky";
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}

@@ -5,29 +5,18 @@
              Title="StartTelling">
     <VerticalStackLayout>
         <Label 
-            Text="you can start writing now..."
+            Text="if you want to see your birthchart, press this..."
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             BackgroundColor="#FE6181"
             FontSize="Medium"
             TextDecorations="Underline" />
         <Label
-            Text="you are worth it"
+            Text="if you want to check someone's sign, press this..."
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             BackgroundColor="#B04FDD"
             FontSize="Medium" />
-        <Label
-            Text="take a deep breath"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"
-            BackgroundColor="#DD4FA4"
-            FontSize="Medium" />
-        <Label
-            Text="this is your safe place ♥"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"
-            BackgroundColor="#FEEC61"
-            FontSize="Medium" />
+     
     </VerticalStackLayout>
 </ContentPage>

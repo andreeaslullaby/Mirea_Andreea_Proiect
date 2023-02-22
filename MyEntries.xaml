@@ -4,7 +4,7 @@
              x:Class="Mirea_Andreea_Proiect.MyEntries"
              Title="MyEntries">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Write what's on your mind"
+        <ToolbarItem Text="Start filling your astral circle!"
                      Clicked="OnSecretListAddedClicked" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView"

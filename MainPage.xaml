@@ -10,28 +10,28 @@
             VerticalOptions="Center">
 
             <Image
-                Source="diarylogo.png"
+                Source="constellation.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
             <Label
-                Text="welcome to your diary ♥"
+                Text="welcome to your astral circle ♥"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label
-                Text="your secrets are safe"
+                Text="the stars are listening..."
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Your diary app"
+                SemanticProperties.Description="Your astral circle app"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
             <Button
                 x:Name="CounterBtn"
-                Text="press here if you need to rant..."
-                SemanticProperties.Hint="press here if you need to rant..."
+                Text="press here to see how many stars are in the sky right now..."
+                SemanticProperties.Hint="press here to see how many stars are in the sky right now......"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center"
                 BackgroundColor="#B04FDD"/>

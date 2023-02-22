@@ -5,7 +5,7 @@
              x:Class="Mirea_Andreea_Proiect.Entry"
              Title="Entry">
     <StackLayout Margin="20">
-        <Editor Placeholder="feel free to write what's on your mind"
+        <Editor Placeholder="please type the person's name and their birthday... choose their sign!"
                 Text="{Binding Description}"
                 HeightRequest="50" >
             <Editor.Behaviors>
@@ -26,5 +26,18 @@
                     Clicked="OnDeleteButtonClicked"
                     BackgroundColor="#E5BA73"/>  
         </Grid>
+
+        <ListView x:Name="listView"
+                  Margin="20">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Detail="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <Button Text="Choose sign" MaximumWidthRequest="300"
+                Clicked="OnChooseButtonClicked"
+                BackgroundColor="#9EF3A9" />
     </StackLayout>
 </ContentPage>

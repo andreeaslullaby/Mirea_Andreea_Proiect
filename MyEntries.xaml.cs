@@ -11,13 +11,13 @@ public partial class MyEntries : ContentPage
 protected override async void OnAppearing()
 	{
 		base.OnAppearing();
-		listView.ItemsSource = await App.Database.GetSecretListsAsync();
+		listView.ItemsSource = await App.Database.GetSignListsAsync();
 	}
 	async void OnSecretListAddedClicked(object sender, EventArgs e)
 	{
 		await Navigation.PushAsync(new Entry
 		{
-			BindingContext = new SecretList()
+			BindingContext = new SignList()
 		});
 	}
 	async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -26,7 +26,7 @@ protected override async void OnAppearing()
 		{
 			await Navigation.PushAsync(new Entry
 			{
-				BindingContext = e.SelectedItem as SecretList
+				BindingContext = e.SelectedItem as SignList
 			});
 		}
 	}

@@ -14,20 +14,43 @@ namespace Mirea_Andreea_Proiect.Data
         public Database(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
-            _database.CreateTableAsync<SecretList>().Wait();
-        }
-        public Task<List<SecretList>> GetSecretListsAsync()
-        {
-            return _database.Table<SecretList>().ToListAsync();
+            _database.CreateTableAsync<SignList>().Wait();
+            _database.CreateTableAsync<Sign>().Wait();
+            _database.CreateTableAsync<ListSign>().Wait();
         }
 
-        public Task<SecretList> GetSecretListAsync(int id)
+        public Task<int> SaveSignAsync(Sign sign)
         {
-            return _database.Table<SecretList>()
+            if (sign.ID != 0)
+            {
+                return _database.UpdateAsync(sign);
+            }
+            else
+            {
+                return _database.InsertAsync(sign);
+            }
+        }
+
+        public Task<int> DeleteSignAsync(Sign sign)
+        {
+            return _database.DeleteAsync(sign);
+        }
+        public Task<List<Sign>> GetSignsAsync()
+        {
+            return _database.Table<Sign>().ToListAsync();
+        }
+        public Task<List<SignList>> GetSignListsAsync()
+        {
+            return _database.Table<SignList>().ToListAsync();
+        }
+
+        public Task<SignList> GetSignListAsync(int id)
+        {
+            return _database.Table<SignList>()
                 .Where(i => i.ID == id)
                 .FirstOrDefaultAsync();
         }
-        public Task<int> SaveSecretListAsync(SecretList slist)
+        public Task<int> SaveSignListAsync(SignList slist)
         {
             if (slist.ID != 0)
             {
@@ -39,9 +62,30 @@ namespace Mirea_Andreea_Proiect.Data
             }
         }
 
-        public Task<int> DeleteSecretListAsync(SecretList slist)
+        public Task<int> DeleteSecretListAsync(SignList slist)
         {
             return _database.DeleteAsync(slist);
+        }
+
+        public Task<int> SaveListSignAsync(ListSign lists)
+        {
+            if (lists.ID != 0)
+            {
+                return _database.UpdateAsync(lists);
+            }
+            else
+            {
+                return _database.InsertAsync(lists);
+            }
+        }
+
+        public Task<List<Sign>> GetListSignsAsync(int signlistid)
+        {
+            return _database.QueryAsync<Sign>(
+                "select S.ID, S.Description from Sign S"
+                + "inner join ListSign LS"
+                + " on S.ID = LS.SignID where LS.SignListID = ?",
+                signlistid);
         }
     }
 }
